@@ -57,7 +57,7 @@ Prompt2:
 ```
 Provide me backbone of ResNet18 instead of Xception, provide me code cell by cell where modification is necessary
 # Attachment:
-# Phase 2 Notebook 1
+# Phase 2 Notebook 1 (xception)
 ```
 
 Basic Debugging:
@@ -95,7 +95,7 @@ Also make sure you reason the above application, apply only if better.
 Provide me the modified code for notebook to add the ResNet34, EfficientNet-B3 with UNET++ and feature engineering, refining loss strategy.
 
 # Attachment:
-# Phase 2 Notebook 2
+# Phase 2 Notebook 1 (resnet18)
 ```
 
 Basic Debugging:
@@ -103,4 +103,10 @@ To Gemini (Fast/Pro Mode)
 
 # My Chain of Thoughts:
 Based on my reference to Comparison of Backbones for Semantic
-Segmentation Network: https://iopscience.iop.org/article/10.1088/1742-6596/1544/1/012196/pdf, and previous hands-on of CNN Architectures like ResNet, EfficientNet during kaggle assignments from my course BSDA2001, I tried ADLinkNet+Xception, but later trying with different loss weights, epochs and augmentation it almost plateaued, hence I tried smaller model ResNet18 with ADLinkNet, after it performed well, I thought of trying other similar models and hence chose ResNet34 and EfficientNet-B3.
+Segmentation Network: https://iopscience.iop.org/article/10.1088/1742-6596/1544/1/012196/pdf, and previous hands-on of CNN Architectures like ResNet, EfficientNet during kaggle assignments from my course BSDA2001, I tried ADLinkNet+Xception, but later trying with different loss weights, epochs and augmentation it almost plateaued, hence I tried smaller model ResNet18 with ADLinkNet, after it performed well, I thought of trying other similar models and hence chose ResNet34 and EfficientNet-B3 with Unet++.
+
+Failed attempt, metrics while training where not satisfactory, I thought Unet++ would perform better, switching back to ADLinkNet + ResNet34/EfficientNet-B3.
+
+Modified the loss function, added new callback functions, modified dropout, modified batchnormalization.
+
+Switched back to ResNet18 on the latest pipeline.
