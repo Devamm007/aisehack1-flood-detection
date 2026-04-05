@@ -37,35 +37,97 @@ git clone <repository-url>
 cd anrf-aisehack-edition-1
 ```
 
-### Setup
-It is recommended to use a virtual environment to manage dependencies.
+# Setup
 
-1. **Create and activate a virtual environment:**
-   ```bash
-   # For Windows
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
+uv is a fast Python package manager. Install it first if you haven't:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
-   # For macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-2. **Install the required packages:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Inference
-To run inference on the prediction dataset, execute the `inference.py` script from the root directory of the project:
+Create and activate a virtual environment:
 
 ```bash
+# Create virtual environment
+uv venv
+
+# Activate on Windows
+.venv\Scripts\activate
+
+# Activate on macOS/Linux
+source .venv/bin/activate
+```
+
+Install PyTorch with CUDA support (adjust CUDA version as needed):
+
+```bash
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
+
+Install remaining dependencies:
+
+```bash
+uv pip install -r requirements.txt
+```
+
+Alternative:
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows)
+.\venv\Scripts\Activate.ps1
+
+# Activate (macOS/Linux)
+source venv/bin/activate
+
+# Install PyTorch first
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Install remaining dependencies
+pip install -r requirements.txt
+```
+
+# Inference
+To run inference on the prediction dataset, execute the inference.py script from the root directory of the project:
+```bash
+uv run inference.py
+# OR
 python models/inference.py
 ```
-This will process the images in the `data/prediction/image` directory and generate a `submission.csv` file in the root folder.
 
-## Resources
-A list of courses, papers, and videos that I referred to during this hackathon is available in [resources-reffered.md](resources-reffered.md).
+```bash
 
-## License
-This project is licensed under the ANRF Open License. See the [LICENSE](LICENSE) file for details.
+## 📄 requirements.txt (copyable)
+
+```txt
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+pytorch-lightning>=2.0.0
+numpy>=1.24.0
+rasterio>=1.3.0
+albumentations>=1.3.0
+segmentation-models-pytorch>=0.3.0
+pandas>=2.0.0
+scipy>=1.10.0
+kagglehub>=0.1.0
+timm>=0.9.0
+torchmetrics>=1.0.0
+scikit-learn>=1.3.0
+```
+
+# Quick Setup
+For a complete one-liner after cloning:
+```bash
+# Linux
+uv venv && source .venv/bin/activate && uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && uv pip install -r requirements.txt
+
+# Windows
+uv venv; .venv\Scripts\activate; uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121; uv pip install -r requirements.txt
+```
+
+# Resources
+A list of courses, papers, and videos that I referred to during this hackathon is available in resources-reffered.md.
+
+# License
+This project is licensed under the ANRF Open License. See the LICENSE file for details.
