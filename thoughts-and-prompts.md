@@ -109,4 +109,7 @@ Failed attempt, metrics while training where not satisfactory, I thought Unet++ 
 
 Modified the loss function, added new callback functions, modified dropout, modified batchnormalization.
 
-Switched back to ResNet18 on the latest pipeline.
+Switched back to ResNet18 on the latest pipeline, tried but could not increase above 0.1539.
+Frustrated!! Score instead was degrading on leaderboard, training metrics were improving, not sure where exactly the problem was arising, probably overfitted.
+
+Switched back to Unet++ with EfficientNet-B3 with modified pipeline to make sure more parameters does not necessarily overfit on low data using cross validation (inspired from GridSearchCV/RandomisedSearchCV)

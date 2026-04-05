@@ -1,0 +1,14 @@
+torch>=1.10.0
+torchvision
+torchaudio
+pytorch-lightning>=1.5.0
+numpy
+rasterio
+albumentations>=1.0.0
+segmentation-models-pytorch>=0.2.0
+pandas
+scipy
+kagglehub
+timm>=0.4.12
+torchmetrics>=0.7.0
+scikit-learn
