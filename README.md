@@ -129,5 +129,9 @@ uv venv; .venv\Scripts\activate; uv pip install torch torchvision torchaudio --i
 # Resources
 A list of courses, papers, and videos that I referred to during this hackathon is available in resources-reffered.md.
 
+# Model Checkpoint
+Download it from here for use under LICENSE:
+https://www.kaggle.com/models/devamwppu2000828/aisehack-flood-unetpp-efficientnet-b5/pyTorch/v3
+
 # License
 This project is licensed under the ANRF Open License. See the LICENSE file for details.
