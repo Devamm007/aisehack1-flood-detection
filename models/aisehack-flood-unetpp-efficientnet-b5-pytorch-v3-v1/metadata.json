@@ -1,0 +1,53 @@
+{
+  "fold_checkpoints": [
+    {
+      "path": "fold1-epoch=50-val_mIoU=0.6128.ckpt",
+      "val_miou": 0.612812340259552
+    },
+    {
+      "path": "fold2-epoch=17-val_mIoU=0.5716.ckpt",
+      "val_miou": 0.5715959668159485
+    },
+    {
+      "path": "fold3-epoch=20-val_mIoU=0.6278.ckpt",
+      "val_miou": 0.6278270483016968
+    },
+    {
+      "path": "fold4-epoch=18-val_mIoU=0.5746.ckpt",
+      "val_miou": 0.5746493935585022
+    },
+    {
+      "path": "fold5-epoch=43-val_mIoU=0.6048.ckpt",
+      "val_miou": 0.6047563552856445
+    }
+  ],
+  "ensemble_checkpoints": [
+    {
+      "path": "fold1-epoch=50-val_mIoU=0.6128.ckpt",
+      "val_miou": 0.612812340259552
+    },
+    {
+      "path": "fold2-epoch=17-val_mIoU=0.5716.ckpt",
+      "val_miou": 0.5715959668159485
+    },
+    {
+      "path": "fold3-epoch=20-val_mIoU=0.6278.ckpt",
+      "val_miou": 0.6278270483016968
+    },
+    {
+      "path": "fold4-epoch=18-val_mIoU=0.5746.ckpt",
+      "val_miou": 0.5746493935585022
+    },
+    {
+      "path": "fold5-epoch=43-val_mIoU=0.6048.ckpt",
+      "val_miou": 0.6047563552856445
+    }
+  ],
+  "config": {
+    "in_channels": 15,
+    "num_classes": 3,
+    "encoder": "efficientnet-b5",
+    "encoder_weights": "imagenet",
+    "patch_size": 512
+  }
+}
